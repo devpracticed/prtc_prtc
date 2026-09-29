@@ -1,0 +1,50 @@
+  0           RESUME                   0
+
+  1           LOAD_SMALL_INT          10
+              STORE_NAME               0 (x)
+
+  3           LOAD_CONST               1 (<code object foo at 0x1032c6330, file "test_func.py", line 3>)
+              MAKE_FUNCTION
+              STORE_NAME               1 (foo)
+
+  7           LOAD_CONST               2 (<code object bar at 0x103235b60, file "test_func.py", line 7>)
+              MAKE_FUNCTION
+              STORE_NAME               2 (bar)
+
+ 11           LOAD_NAME                1 (foo)
+              PUSH_NULL
+              LOAD_NAME                0 (x)
+              CALL                     1
+              STORE_NAME               3 (z)
+
+ 13           LOAD_NAME                4 (print)
+              PUSH_NULL
+              LOAD_CONST               3 ('Z is {z}')
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               4 (None)
+              RETURN_VALUE
+
+Disassembly of <code object foo at 0x1032c6330, file "test_func.py", line 3>:
+  3           RESUME                   0
+
+  4           LOAD_FAST_BORROW         0 (x)
+              LOAD_SMALL_INT           2
+              BINARY_OP                5 (*)
+              STORE_FAST               1 (y)
+
+  5           LOAD_GLOBAL              1 (bar + NULL)
+              LOAD_FAST_BORROW         1 (y)
+              CALL                     1
+              RETURN_VALUE
+
+Disassembly of <code object bar at 0x103235b60, file "test_func.py", line 7>:
+  7           RESUME                   0
+
+  8           LOAD_FAST_BORROW         0 (x)
+              LOAD_SMALL_INT           2
+              BINARY_OP               11 (/)
+              STORE_FAST               1 (y)
+
+  9           LOAD_FAST_BORROW         1 (y)
+              RETURN_VALUE
