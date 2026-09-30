@@ -1,0 +1,72 @@
+  0           RESUME                   0
+
+  2           LOAD_CONST               0 (1000)
+              STORE_NAME               0 (x)
+
+  4           LOAD_CONST               1 (<code object foo at 0x102c99b60, file "cpython_prtc/func_test.py", line 4>)
+              MAKE_FUNCTION
+              STORE_NAME               1 (foo)
+
+  9           LOAD_NAME                1 (foo)
+              PUSH_NULL
+              LOAD_SMALL_INT          10
+              CALL                     1
+              STORE_NAME               2 (b1)
+
+ 10           LOAD_NAME                1 (foo)
+              PUSH_NULL
+              LOAD_SMALL_INT          20
+              CALL                     1
+              STORE_NAME               3 (b2)
+
+ 12           LOAD_NAME                4 (print)
+              PUSH_NULL
+              LOAD_NAME                2 (b1)
+              CALL                     1
+              POP_TOP
+
+ 14           LOAD_NAME                4 (print)
+              PUSH_NULL
+              LOAD_CONST               2 ('------\n')
+              CALL                     1
+              POP_TOP
+
+ 16           LOAD_NAME                4 (print)
+              PUSH_NULL
+              LOAD_NAME                3 (b2)
+              PUSH_NULL
+              LOAD_SMALL_INT          30
+              CALL                     1
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               3 (None)
+              RETURN_VALUE
+
+Disassembly of <code object foo at 0x102c99b60, file "cpython_prtc/func_test.py", line 4>:
+  --           MAKE_CELL                0 (x)
+
+   4           RESUME                   0
+
+   5           LOAD_FAST_BORROW         0 (x)
+               BUILD_TUPLE              1
+               LOAD_CONST               0 (<code object bar at 0x102d2a330, file "cpython_prtc/func_test.py", line 5>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               STORE_FAST               1 (bar)
+
+   7           LOAD_FAST_BORROW         1 (bar)
+               RETURN_VALUE
+
+Disassembly of <code object bar at 0x102d2a330, file "cpython_prtc/func_test.py", line 5>:
+  --           COPY_FREE_VARS           1
+
+   5           RESUME                   0
+
+   6           LOAD_GLOBAL              1 (print + NULL)
+               LOAD_DEREF               1 (x)
+               LOAD_FAST_BORROW         0 (y)
+               BINARY_OP                0 (+)
+               CALL                     1
+               POP_TOP
+               LOAD_CONST               0 (None)
+               RETURN_VALUE

@@ -1,0 +1,19 @@
+  0           RESUME                   0
+
+  2           LOAD_NAME                0 (x)
+              LOAD_NAME                1 (y)
+              COMPARE_OP              18 (bool(<))
+              POP_JUMP_IF_FALSE        5 (to L1)
+              NOT_TAKEN
+
+  3           LOAD_NAME                0 (x)
+              STORE_NAME               2 (z)
+              LOAD_CONST               1 (None)
+              RETURN_VALUE
+
+  4   L1:     NOP
+
+  5           LOAD_NAME                1 (y)
+              STORE_NAME               2 (z)
+              LOAD_CONST               1 (None)
+              RETURN_VALUE

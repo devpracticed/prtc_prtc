@@ -1,0 +1,41 @@
+  0           RESUME                   0
+
+  2           LOAD_SMALL_INT           1
+              STORE_NAME               0 (a)
+
+  4           LOAD_CONST               1 (<code object rr at 0x1011b2e90, file "cpython_prtc/quicks.py", line 4>)
+              MAKE_FUNCTION
+              STORE_NAME               1 (rr)
+
+  7           LOAD_CONST               2 (<code object rrr at 0x10139a170, file "cpython_prtc/quicks.py", line 7>)
+              MAKE_FUNCTION
+              STORE_NAME               2 (rrr)
+
+ 11           LOAD_CONST               3 (<code object rrrr at 0x1011e1b60, file "cpython_prtc/quicks.py", line 11>)
+              MAKE_FUNCTION
+              STORE_NAME               3 (rrrr)
+              LOAD_CONST               4 (None)
+              RETURN_VALUE
+
+Disassembly of <code object rr at 0x1011b2e90, file "cpython_prtc/quicks.py", line 4>:
+  4           RESUME                   0
+
+  5           LOAD_SMALL_INT           8
+              RETURN_VALUE
+
+Disassembly of <code object rrr at 0x10139a170, file "cpython_prtc/quicks.py", line 7>:
+  7           RESUME                   0
+
+  8           LOAD_CONST               1 ((9, 78))
+              RETURN_VALUE
+
+Disassembly of <code object rrrr at 0x1011e1b60, file "cpython_prtc/quicks.py", line 11>:
+ 11           RESUME                   0
+
+ 12           LOAD_CONST               0 (101010)
+              STORE_FAST               0 (b)
+
+ 13           LOAD_GLOBAL              0 (a)
+              LOAD_FAST_BORROW         0 (b)
+              BUILD_TUPLE              2
+              RETURN_VALUE
